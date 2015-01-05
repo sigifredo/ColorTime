@@ -7,7 +7,30 @@
     android:background="@color/background"
     tools:context="com.nullpoint.memoryg.memorygame.ConfigActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rowSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/colSpinner"
+        android:layout_below="@+id/rowSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        android:id="@+id/play"
+        android:background="@color/black_overlay"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="playGame" />
 
 </RelativeLayout>
