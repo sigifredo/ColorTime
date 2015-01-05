@@ -7,6 +7,8 @@ import android.widget.GridView;
 
 public class GridActivity extends Activity {
 
+    private int mRows;
+    private int mCols;
     private GridView mGridView;
 
     @Override
@@ -14,6 +16,10 @@ public class GridActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
 
+        Bundle bundle = getIntent().getExtras();
+
         mGridView = (GridView) findViewById(R.id.gridView);
+        mRows = bundle.getInt("rows");
+        mCols = bundle.getInt("cols");
     }
 }

@@ -1,6 +1,7 @@
 package com.nullpoint.memoryg.memorygame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,12 +41,15 @@ public class ConfigActivity extends Activity {
     }
 
     public void playGame(View view) {
-        Toast.makeText(this, R.string.not_implemented_yet, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, GridActivity.class);
+
+        intent.putExtra("rows", Integer.parseInt((String) mRowSpinner.getSelectedItem()));
+        intent.putExtra("cols", Integer.parseInt((String) mColSpinner.getSelectedItem()));
+
+        startActivity(intent);
     }
 
     public void rowChange(int rows) {
-        Toast.makeText(this, "" + rows, Toast.LENGTH_SHORT).show();
-
         List<String> cols = new ArrayList<>();
 
         for (int i = 1; i < 9; i++) {
