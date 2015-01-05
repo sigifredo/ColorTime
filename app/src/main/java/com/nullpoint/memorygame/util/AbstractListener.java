@@ -1,4 +1,4 @@
-package com.nullpoint.memoryg.memorygame.util;
+package com.nullpoint.memorygame.util;
 
 public abstract class AbstractListener<Parent> {
     private Parent mParent;

@@ -1,4 +1,4 @@
-package com.nullpoint.memoryg.memorygame;
+package com.nullpoint.memorygame;
 
 import android.app.Activity;
 import android.os.Bundle;
