@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -17,11 +16,10 @@ public class MainActivity extends Activity {
     }
 
     public void playGame(View view) {
-        Intent intent = new Intent(this, ConfigActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, ConfigActivity.class));
     }
 
     public void highScores(View view) {
-        Toast.makeText(this, R.string.not_implemented_yet, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, HighScoresActivity.class));
     }
 }

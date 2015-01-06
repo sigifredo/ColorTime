@@ -26,6 +26,10 @@
             android:name=".ConfigActivity"
             android:label="@string/title_activity_config" >
         </activity>
+        <activity
+            android:name=".HighScoresActivity"
+            android:label="@string/title_activity_high_scores" >
+        </activity>
     </application>
 
 </manifest>
