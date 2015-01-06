@@ -54,7 +54,7 @@ public class ConfigActivity extends Activity {
         for (int i = 1; i < 9; i++) {
             int items = rows * i;
 
-            if ((items & 1) == 0)
+            if ((items & 1) == 0 && items > 2)
                 cols.add("" + i);
         }
 
