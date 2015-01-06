@@ -1,14 +1,9 @@
 package com.nullpoint.memorygame.util;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridLayout;
-import android.widget.ImageView;
-
-import com.nullpoint.memorygame.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,19 +35,18 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
+        View view;
 
         if (convertView == null) {
-            imageView = new ImageView(mContext);
-            imageView.setMinimumHeight(85);
-            imageView.setMinimumWidth(85);
-            // imageView.setAdjustViewBounds(true);
+            view = new View(mContext);
+            view.setMinimumHeight(85);
+            view.setMinimumWidth(85);
         } else
-            imageView = (ImageView) convertView;
+            view = convertView;
 
-        imageView.setImageResource(R.drawable.ic_launcher);
-        imageView.setBackgroundColor(mColors.get(position));
+        int color = mColors.get(position) | 0xff000000;
+        view.setBackgroundColor(color);
 
-        return imageView;
+        return view;
     }
 }
