@@ -31,9 +31,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
+            android:text="No hay puntajes guardados"
             android:id="@+id/textView"
-            android:layout_above="@+id/button"
+            android:layout_above="@+id/play"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 

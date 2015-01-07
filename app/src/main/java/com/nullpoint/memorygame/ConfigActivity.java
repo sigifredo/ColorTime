@@ -1,20 +1,21 @@
 package com.nullpoint.memorygame;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.nullpoint.memorygame.playservices.PlaceholderFragment;
 import com.nullpoint.memorygame.util.AbstractListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class ConfigActivity extends Activity {
+public class ConfigActivity extends FragmentActivity {
 
     private Spinner mColSpinner;
     private Spinner mRowSpinner;
@@ -23,6 +24,12 @@ public class ConfigActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+            .add(R.id.container, new PlaceholderFragment())
+            .commit();
+        }
 
         mRowSpinner = (Spinner) findViewById(R.id.rowSpinner);
         mColSpinner = (Spinner) findViewById(R.id.colSpinner);

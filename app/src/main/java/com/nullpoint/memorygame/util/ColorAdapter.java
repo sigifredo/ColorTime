@@ -44,7 +44,7 @@ public class ColorAdapter extends BaseAdapter {
         } else
             view = convertView;
 
-        int color = mColors.get(position) | 0xff000000;
+        int color = mColors.get(position);
         view.setBackgroundColor(color);
 
         return view;

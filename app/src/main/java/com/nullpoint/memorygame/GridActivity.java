@@ -7,10 +7,8 @@ import android.widget.GridView;
 import com.nullpoint.memorygame.util.ColorAdapter;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 
 public class GridActivity extends Activity {
@@ -34,7 +32,7 @@ public class GridActivity extends Activity {
 
     public static List<Integer> generateColorList(int cols, int rows) {
         List<Integer> colors = new ArrayList<>();
-        Set<Integer> order = new HashSet<>();
+        List<Integer> order = new ArrayList<>();
         List<Integer> result = new ArrayList<>();
 
         Random random = new Random();
@@ -42,7 +40,7 @@ public class GridActivity extends Activity {
         int n = (cols * rows) / 2;
 
         for (int i = 0; i < n; i++) {
-            int newColor = random.nextInt(0x1000000);
+            int newColor = random.nextInt(0x1000000) | 0xff000000;
 
             if (!colors.contains(newColor)) {
                 colors.add(newColor);
@@ -53,8 +51,11 @@ public class GridActivity extends Activity {
 
         n *= 2;
 
-        while (order.size() != n)
-            order.add(random.nextInt(n) + 1);
+        while (order.size() != n) {
+            int r = random.nextInt(n) + 1;
+            if (!order.contains(r))
+                order.add(r);
+        }
 
         for (Integer i: order)
             result.add(colors.get(i - 1));
