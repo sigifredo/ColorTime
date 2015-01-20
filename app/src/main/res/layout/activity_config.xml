@@ -52,13 +52,13 @@
         android:name="com.nullpoint.memorygame.playservices.PlaceholderFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/adFragment" />
+        android:layout_alignParentTop="true" />
 
     <fragment
         android:id="@+id/adFragment"
         android:name="com.nullpoint.memorygame.playservices.AdFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentTop="true" />
 
 </RelativeLayout>
