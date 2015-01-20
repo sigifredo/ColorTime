@@ -96,7 +96,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
 
                 if (mColorViews[0] == null)
                     mColorViews[0] = colorView;
-                else {
+                else if (mColorViews[0] != colorView) {
                     if (mColorViews[0].getBackgroundColor() == colorView.getBackgroundColor())
                         countPoint();
 
