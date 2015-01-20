@@ -76,7 +76,8 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         ColorView colorView = (ColorView) view;
 
-        if (colorView.getBackgroundColor() != ColorAdapter.TRANSPARENT_COLOR) {
+        if (colorView.getBackgroundColor() != ColorAdapter.TRANSPARENT_COLOR && colorView != mColorViews[0] && colorView != mColorViews[1]) {
+
             if (mColorViews[0] == null || mColorViews[1] == null) {
                 colorView.setBackgroundColor(0xffffffff);
                 mColorViews[(mColorViews[0] == null)?0:1] = colorView;
@@ -90,7 +91,9 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
                 mColorViews[0].setBackgroundColor(color);
                 mColorViews[1].setBackgroundColor(color);
 
-                mColorViews[0] = mColorViews[1] = null;
+                colorView.setBackgroundColor(0xffffffff);
+                mColorViews[0] = colorView;
+                mColorViews[1] = null;
             }
         }
     }
