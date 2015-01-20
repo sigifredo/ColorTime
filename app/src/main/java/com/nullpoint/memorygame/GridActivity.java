@@ -2,6 +2,8 @@ package com.nullpoint.memorygame;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.nullpoint.memorygame.util.ColorAdapter;
@@ -11,12 +13,18 @@ import java.util.List;
 import java.util.Random;
 
 
-public class GridActivity extends Activity {
+public class GridActivity extends Activity implements AdapterView.OnItemClickListener {
+
+    private int mCurrentColor;
+    private ColorView mColorViews[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
+
+        mCurrentColor = 0;
+        mColorViews = new ColorView[2];
 
         Bundle bundle = getIntent().getExtras();
 
@@ -27,7 +35,8 @@ public class GridActivity extends Activity {
         gridView.setNumColumns(cols);
         gridView.setHorizontalSpacing(5);
         gridView.setVerticalSpacing(5);
-        gridView.setAdapter(new ColorAdapter(this, generateColorList(cols, rows)));
+        gridView.setAdapter(new ColorAdapter(this, rows * cols));
+        gridView.setOnItemClickListener(this);
     }
 
     public static List<Integer> generateColorList(int cols, int rows) {
@@ -61,5 +70,28 @@ public class GridActivity extends Activity {
             result.add(colors.get(i - 1));
 
         return result;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        ColorView colorView = (ColorView) view;
+
+        if (colorView.getBackgroundColor() != ColorAdapter.TRANSPARENT_COLOR) {
+            if (mColorViews[0] == null || mColorViews[1] == null) {
+                colorView.setBackgroundColor(0xffffffff);
+                mColorViews[(mColorViews[0] == null)?0:1] = colorView;
+            } else {
+                int color;
+                if (mColorViews[0].getBackgroundColor() == mColorViews[1].getBackgroundColor())
+                    color = ColorAdapter.TRANSPARENT_COLOR;
+                else
+                    color = ColorAdapter.BACKGROUND_COLOR;
+
+                mColorViews[0].setBackgroundColor(color);
+                mColorViews[1].setBackgroundColor(color);
+
+                mColorViews[0] = mColorViews[1] = null;
+            }
+        }
     }
 }

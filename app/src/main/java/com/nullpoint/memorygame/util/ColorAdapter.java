@@ -5,27 +5,40 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.nullpoint.memorygame.ColorView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ColorAdapter extends BaseAdapter {
 
-    private List<Integer> mColors;
+    public static final int BACKGROUND_COLOR = 0xff000000;
+    public static final int TRANSPARENT_COLOR = 0x0;
     private Context mContext;
+    /**
+     * Size of the color list.
+     */
+    private int mNumColors;
 
-    public ColorAdapter(Context context, List<Integer> colors) {
+    /**
+     * Default constructor.
+     *
+     * @param context context of the adapter.
+     * @param numColors Size of the color list.
+     */
+    public ColorAdapter(Context context, int numColors) {
         mContext = context;
-        mColors = new ArrayList<>(colors);
+        mNumColors = numColors;
     }
 
     @Override
     public int getCount() {
-        return mColors.size();
+        return mNumColors;
     }
 
     @Override
     public Object getItem(int position) {
-        return mColors.get(position);
+        return BACKGROUND_COLOR;
     }
 
     @Override
@@ -38,14 +51,11 @@ public class ColorAdapter extends BaseAdapter {
         View view;
 
         if (convertView == null) {
-            view = new View(mContext);
+            view = new ColorView(mContext);
             view.setMinimumHeight(85);
             view.setMinimumWidth(85);
         } else
             view = convertView;
-
-        int color = mColors.get(position);
-        view.setBackgroundColor(color);
 
         return view;
     }
