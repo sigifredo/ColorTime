@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.nullpoint.memorygame.util.ColorAdapter;
 
@@ -18,6 +19,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
     private int mCurrentColor;
     private ColorView mColorViews[];
     private List<Integer> mColorList;
+    private int mPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,14 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(this);
 
         mColorList = generateColorList(cols, rows);
+    }
+
+    protected void countPoint() {
+        mPoints += 2;
+
+        if (mPoints == mColorList.size()) {
+            Toast.makeText(this, "fin del juego", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public static List<Integer> generateColorList(int cols, int rows) {
@@ -79,13 +89,23 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         ColorView colorView = (ColorView) view;
 
-        if (colorView.getBackgroundColor() != ColorAdapter.TRANSPARENT_COLOR && colorView != mColorViews[0] && colorView != mColorViews[1]) {
+        if (colorView.getBackgroundColor() != ColorAdapter.TRANSPARENT_COLOR) {
 
             if (mColorViews[0] == null || mColorViews[1] == null) {
                 colorView.setBackgroundColor(mColorList.get(position));
-                mColorViews[(mColorViews[0] == null)?0:1] = colorView;
+
+                if (mColorViews[0] == null)
+                    mColorViews[0] = colorView;
+                else {
+                    if (mColorViews[0].getBackgroundColor() == colorView.getBackgroundColor())
+                        countPoint();
+
+                    mColorViews[1] = colorView;
+                }
+
             } else {
                 int color;
+
                 if (mColorViews[0].getBackgroundColor() == mColorViews[1].getBackgroundColor())
                     color = ColorAdapter.TRANSPARENT_COLOR;
                 else
@@ -94,8 +114,14 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
                 mColorViews[0].setBackgroundColor(color);
                 mColorViews[1].setBackgroundColor(color);
 
-                colorView.setBackgroundColor(mColorList.get(position));
-                mColorViews[0] = colorView;
+                if (color == ColorAdapter.TRANSPARENT_COLOR && (colorView == mColorViews[0] || colorView == mColorViews[1])) {
+                    mColorViews[0] = null;
+                }
+                else {
+                    colorView.setBackgroundColor(mColorList.get(position));
+                    mColorViews[0] = colorView;
+                }
+
                 mColorViews[1] = null;
             }
         }
