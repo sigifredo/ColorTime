@@ -17,6 +17,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
 
     private int mCurrentColor;
     private ColorView mColorViews[];
+    private List<Integer> mColorList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         gridView.setVerticalSpacing(5);
         gridView.setAdapter(new ColorAdapter(this, rows * cols));
         gridView.setOnItemClickListener(this);
+
+        mColorList = generateColorList(cols, rows);
     }
 
     public static List<Integer> generateColorList(int cols, int rows) {
@@ -79,7 +82,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         if (colorView.getBackgroundColor() != ColorAdapter.TRANSPARENT_COLOR && colorView != mColorViews[0] && colorView != mColorViews[1]) {
 
             if (mColorViews[0] == null || mColorViews[1] == null) {
-                colorView.setBackgroundColor(0xffffffff);
+                colorView.setBackgroundColor(mColorList.get(position));
                 mColorViews[(mColorViews[0] == null)?0:1] = colorView;
             } else {
                 int color;
@@ -91,7 +94,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
                 mColorViews[0].setBackgroundColor(color);
                 mColorViews[1].setBackgroundColor(color);
 
-                colorView.setBackgroundColor(0xffffffff);
+                colorView.setBackgroundColor(mColorList.get(position));
                 mColorViews[0] = colorView;
                 mColorViews[1] = null;
             }
