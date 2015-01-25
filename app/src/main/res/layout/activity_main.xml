@@ -35,8 +35,9 @@
             <Button android:id="@+id/hscores"
                 android:layout_width="0dp" android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hscores"
-                android:onClick="highScores" />
+                android:text="@string/top_scores"
+                android:onClick="highScores"
+                android:enabled="false" />
 
         </LinearLayout>
 

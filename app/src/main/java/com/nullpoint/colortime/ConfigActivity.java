@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.nullpoint.colortime.playservices.PlaceholderFragment;
 import com.nullpoint.colortime.util.AbstractListener;
 
 import java.util.ArrayList;
@@ -24,12 +23,6 @@ public class ConfigActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-            .add(R.id.container, new PlaceholderFragment())
-            .commit();
-        }
 
         mRowSpinner = (Spinner) findViewById(R.id.rowSpinner);
         mColSpinner = (Spinner) findViewById(R.id.colSpinner);

@@ -18,25 +18,20 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".GridActivity"
-            android:label="@string/title_activity_grid" >
+            android:name=".GridActivity">
         </activity>
         <activity
-            android:name=".ConfigActivity"
-            android:label="@string/title_activity_config" >
+            android:name=".ConfigActivity">
         </activity>
         <activity
-            android:name=".HighScoresActivity"
-            android:label="@string/title_activity_high_scores" >
+            android:name=".HighScoresActivity">
         </activity>
         <activity
-            android:name=".SaveScoreActivity"
-            android:label="@string/title_activity_save_score" >
+            android:name=".SaveScoreActivity">
         </activity>
         <activity android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"

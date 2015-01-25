@@ -16,7 +16,6 @@ import java.util.Random;
 
 public class GridActivity extends Activity implements AdapterView.OnItemClickListener {
 
-    private int mCurrentColor;
     private ColorView mColorViews[];
     private List<Integer> mColorList;
     private int mPoints;
@@ -26,7 +25,6 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
 
-        mCurrentColor = 0;
         mColorViews = new ColorView[2];
 
         Bundle bundle = getIntent().getExtras();

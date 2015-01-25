@@ -26,11 +26,14 @@ public class HighScoresActivity extends Activity {
     protected void onResume() {
         super.onResume();
 
+        /*
         // verificar que exista lista de puntuaciones
         if (false) {
             mRelativeLayout.setVisibility(View.INVISIBLE);
         } else // sino existe lista de puntuaciones
             mScoreList.setVisibility(View.INVISIBLE);
+        */
+        mScoreList.setVisibility(View.INVISIBLE);
     }
 
     public void playGame(View view) {

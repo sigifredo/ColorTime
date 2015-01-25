@@ -7,8 +7,6 @@ import android.widget.BaseAdapter;
 
 import com.nullpoint.colortime.ColorView;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ColorAdapter extends BaseAdapter {
 
