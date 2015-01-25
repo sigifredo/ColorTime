@@ -13,5 +13,9 @@
     <string name="title_activity_high_scores">HighScoresActivity</string>
     <string name="title_activity_save_score">SaveScoreActivity</string>
     <string name="banner_ad_unit_id">ca-app-pub-6973573236116374/7203952405</string>
+    <string name="version">Version: </string>
+    <string name="powered_by_np">Powered by NullPoint.</string>
+    <string name="cols">Columnas</string>
+    <string name="rows">Filas</string>
 
 </resources>

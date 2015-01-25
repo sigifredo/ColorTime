@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ColorAdapter extends BaseAdapter {
 
-    public static final int BACKGROUND_COLOR = 0xff000000;
+    public static final int BACKGROUND_COLOR = 0xff4d4d4d;
     public static final int TRANSPARENT_COLOR = 0x0;
     private Context mContext;
     /**
