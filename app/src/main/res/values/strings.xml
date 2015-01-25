@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name" translatable="false">ColorTime</string>
-    <string name="banner_ad_unit_id">ca-app-pub-6973573236116374/7203952405</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-6973573236116374/7203952405</string>
     <string name="cols">Columns</string>
     <string name="new_record">New record</string>
     <string name="no_saved_scores">No saved scores</string>
