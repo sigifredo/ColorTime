@@ -1,4 +1,4 @@
-package com.nullpoint.memorygame.playservices;
+package com.nullpoint.colortime.playservices;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.nullpoint.memorygame.R;
+import com.nullpoint.colortime.R;
 
 
 public class PlaceholderFragment extends Fragment {

@@ -1,4 +1,4 @@
-package com.nullpoint.memorygame;
+package com.nullpoint.colortime;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.nullpoint.memorygame.playservices.PlaceholderFragment;
-import com.nullpoint.memorygame.util.AbstractListener;
+import com.nullpoint.colortime.playservices.PlaceholderFragment;
+import com.nullpoint.colortime.util.AbstractListener;
 
 import java.util.ArrayList;
 import java.util.List;

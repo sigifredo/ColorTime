@@ -1,9 +1,9 @@
-package com.nullpoint.memorygame;
+package com.nullpoint.colortime;
 
 import android.content.Context;
 import android.view.View;
 
-import com.nullpoint.memorygame.util.ColorAdapter;
+import com.nullpoint.colortime.util.ColorAdapter;
 
 public class ColorView extends View {
 

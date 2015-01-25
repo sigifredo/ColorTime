@@ -1,4 +1,4 @@
-package com.nullpoint.memorygame;
+package com.nullpoint.colortime;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.nullpoint.memorygame.util.ColorAdapter;
+import com.nullpoint.colortime.util.ColorAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

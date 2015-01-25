@@ -1,11 +1,11 @@
-package com.nullpoint.memorygame.util;
+package com.nullpoint.colortime.util;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.nullpoint.memorygame.ColorView;
+import com.nullpoint.colortime.ColorView;
 
 import java.util.ArrayList;
 import java.util.List;

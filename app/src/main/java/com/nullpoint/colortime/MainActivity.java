@@ -1,4 +1,4 @@
-package com.nullpoint.memorygame;
+package com.nullpoint.colortime;
 
 import android.app.Activity;
 import android.content.Intent;

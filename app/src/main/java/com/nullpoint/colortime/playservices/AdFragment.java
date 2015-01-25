@@ -1,4 +1,4 @@
-package com.nullpoint.memorygame.playservices;
+package com.nullpoint.colortime.playservices;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.nullpoint.memorygame.R;
+import com.nullpoint.colortime.R;
 
 
 /**
