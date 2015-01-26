@@ -1,4 +1,4 @@
-package com.nullpoint.memorygame;
+package com.nullpoint.colortime;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.nullpoint.memorygame.util.ColorAdapter;
+import com.nullpoint.colortime.util.ColorAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,6 @@ import java.util.Random;
 
 public class GridActivity extends Activity implements AdapterView.OnItemClickListener {
 
-    private int mCurrentColor;
     private ColorView mColorViews[];
     private List<Integer> mColorList;
     private int mPoints;
@@ -26,7 +25,6 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
 
-        mCurrentColor = 0;
         mColorViews = new ColorView[2];
 
         Bundle bundle = getIntent().getExtras();
@@ -96,7 +94,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
 
                 if (mColorViews[0] == null)
                     mColorViews[0] = colorView;
-                else {
+                else if (mColorViews[0] != colorView) {
                     if (mColorViews[0].getBackgroundColor() == colorView.getBackgroundColor())
                         countPoint();
 

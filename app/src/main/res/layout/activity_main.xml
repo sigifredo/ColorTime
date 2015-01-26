@@ -2,18 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     tools:context=".MainActivity">
 
-    <TextView android:id="@+id/fullscreen_content"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/colorTimeImage"
         android:keepScreenOn="true"
-        android:textColor="#33b5e5"
-        android:textStyle="bold"
-        android:textSize="50sp"
         android:gravity="center"
-        android:text="@string/dummy_content" />
+        android:src="@drawable/face_main"
+        android:scaleType="centerInside"
+        android:onClick="showAbout" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -21,29 +20,27 @@
         android:fitsSystemWindows="true">
 
         <LinearLayout android:id="@+id/fullscreen_content_controls"
-            style="?metaButtonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:background="@color/black_overlay"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
             <Button android:id="@+id/play"
-                style="?metaButtonBarButtonStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/play"
                 android:onClick="playGame" />
             <Button android:id="@+id/hscores"
-                style="?metaButtonBarButtonStyle"
                 android:layout_width="0dp" android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hscores"
-                android:onClick="highScores" />
+                android:text="@string/top_scores"
+                android:onClick="highScores"
+                android:enabled="false" />
 
         </LinearLayout>
+
     </FrameLayout>
 
 </FrameLayout>

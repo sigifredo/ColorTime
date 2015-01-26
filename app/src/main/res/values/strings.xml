@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name" translatable="false">MemoryGame</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="hscores">Mejores puntajes</string>
-    <string name="play">Jugar</string>
-    <string name="title_activity_grid">GridActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_config">ConfigActivity</string>
-    <string name="not_implemented_yet">No implementado aún</string>
-    <string name="title_activity_high_scores">HighScoresActivity</string>
-    <string name="title_activity_save_score">SaveScoreActivity</string>
-    <string name="banner_ad_unit_id">ca-app-pub-6973573236116374/7203952405</string>
+    <string name="app_name" translatable="false">ColorTime</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-6973573236116374/7203952405</string>
+    <string name="cols">Columns</string>
+    <string name="new_record">New record</string>
+    <string name="no_saved_scores">No saved scores</string>
+    <string name="not_implemented_yet">Not implemented yet</string>
+    <string name="play">Play</string>
+    <string name="points">points</string>
+    <string name="powered_by_np">Powered by NullPoint.</string>
+    <string name="rows">Rows</string>
+    <string name="save">Save</string>
+    <string name="top_scores">Top scores</string>
+    <string name="version">Version: </string>
 
 </resources>

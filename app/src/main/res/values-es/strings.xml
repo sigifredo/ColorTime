@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cols">Columnas</string>
+    <string name="new_record">Nuevo récord</string>
+    <string name="no_saved_scores">No hay puntajes guardados</string>
+    <string name="not_implemented_yet">No implementado aún</string>
+    <string name="play">Jugar</string>
+    <string name="points">puntos</string>
+    <string name="powered_by_np">Creado por NullPoint.</string>
+    <string name="rows">Filas</string>
+    <string name="save">Guardar</string>
+    <string name="top_scores">Mejores puntajes</string>
+    <string name="version">Versión: </string>
+
+</resources>

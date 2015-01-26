@@ -1,18 +1,16 @@
-package com.nullpoint.memorygame.util;
+package com.nullpoint.colortime.util;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.nullpoint.memorygame.ColorView;
+import com.nullpoint.colortime.ColorView;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ColorAdapter extends BaseAdapter {
 
-    public static final int BACKGROUND_COLOR = 0xff000000;
+    public static final int BACKGROUND_COLOR = 0xff4d4d4d;
     public static final int TRANSPARENT_COLOR = 0x0;
     private Context mContext;
     /**

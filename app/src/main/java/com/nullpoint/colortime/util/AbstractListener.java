@@ -1,4 +1,4 @@
-package com.nullpoint.memorygame.util;
+package com.nullpoint.colortime.util;
 
 public abstract class AbstractListener<Parent> {
     private Parent mParent;
