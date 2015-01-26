@@ -3,7 +3,7 @@ ColorTime
 
 It's a funny to evaluate your memory.
 
-Property | value
+Property | Value
 -------- | -----
 Version | 0.0.1
 Status | Alpha
