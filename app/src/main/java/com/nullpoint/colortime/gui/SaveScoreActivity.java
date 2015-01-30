@@ -1,7 +1,9 @@
-package com.nullpoint.colortime;
+package com.nullpoint.colortime.gui;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.nullpoint.colortime.R;
 
 
 public class SaveScoreActivity extends Activity {

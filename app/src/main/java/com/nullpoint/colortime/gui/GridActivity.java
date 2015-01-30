@@ -1,4 +1,4 @@
-package com.nullpoint.colortime;
+package com.nullpoint.colortime.gui;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.nullpoint.colortime.R;
 import com.nullpoint.colortime.util.ColorAdapter;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.nullpoint.colortime;
+package com.nullpoint.colortime.gui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.nullpoint.colortime.R;
 import com.nullpoint.colortime.util.AbstractListener;
 
 import java.util.ArrayList;
