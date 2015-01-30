@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Chronometer;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import java.util.Random;
 public class GridActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private ColorView mColorViews[];
+    private Chronometer mChronometer;
     private List<Integer> mColorList;
     private int mPoints;
 
@@ -32,6 +34,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
 
         Bundle bundle = getIntent().getExtras();
 
+        mChronometer = (Chronometer) findViewById(R.id.chronometer);
         GridView gridView = (GridView) findViewById(R.id.gridView);
         int rows = bundle.getInt("rows");
         int cols = bundle.getInt("cols");
@@ -43,6 +46,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(this);
 
         mColorList = generateColorList(cols, rows);
+        mChronometer.start();
     }
 
     protected void countPoint() {
@@ -50,6 +54,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
 
         if (mPoints == mColorList.size()) {
             Toast.makeText(this, "fin del juego", Toast.LENGTH_SHORT).show();
+            mChronometer.stop();
         }
     }
 
