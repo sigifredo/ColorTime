@@ -1,12 +1,15 @@
-package com.nullpoint.colortime;
+package com.nullpoint.colortime.gui;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Chronometer;
 import android.widget.GridView;
-import android.widget.Toast;
 
+import com.nullpoint.colortime.R;
 import com.nullpoint.colortime.util.ColorAdapter;
 
 import java.util.ArrayList;
@@ -17,6 +20,7 @@ import java.util.Random;
 public class GridActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private ColorView mColorViews[];
+    private Chronometer mChronometer;
     private List<Integer> mColorList;
     private int mPoints;
 
@@ -24,11 +28,13 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         mColorViews = new ColorView[2];
 
         Bundle bundle = getIntent().getExtras();
 
+        mChronometer = (Chronometer) findViewById(R.id.chronometer);
         GridView gridView = (GridView) findViewById(R.id.gridView);
         int rows = bundle.getInt("rows");
         int cols = bundle.getInt("cols");
@@ -40,13 +46,17 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(this);
 
         mColorList = generateColorList(cols, rows);
+        mChronometer.start();
     }
 
     protected void countPoint() {
         mPoints += 2;
 
         if (mPoints == mColorList.size()) {
-            Toast.makeText(this, "fin del juego", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, GameOverActivity.class);
+            mChronometer.stop();
+            startActivity(intent);
+            finish();
         }
     }
 

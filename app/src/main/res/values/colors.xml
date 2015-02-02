@@ -2,5 +2,6 @@
 
     <color name="black_overlay">#66000000</color>
     <color name="background">#ff1a1a1a</color>
+    <color name="gray_text">#ff919191</color>
 
 </resources>

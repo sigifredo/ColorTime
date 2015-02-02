@@ -1,4 +1,4 @@
-package com.nullpoint.colortime;
+package com.nullpoint.colortime.gui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,6 +7,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
+
+import com.nullpoint.colortime.R;
 
 
 public class MainActivity extends Activity {

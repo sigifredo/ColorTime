@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.nullpoint.colortime.ColorView;
+import com.nullpoint.colortime.gui.ColorView;
 
 
 public class ColorAdapter extends BaseAdapter {

@@ -1,4 +1,4 @@
-package com.nullpoint.colortime;
+package com.nullpoint.colortime.gui;
 
 import android.content.Context;
 import android.view.View;

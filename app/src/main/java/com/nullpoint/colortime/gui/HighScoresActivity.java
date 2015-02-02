@@ -1,4 +1,4 @@
-package com.nullpoint.colortime;
+package com.nullpoint.colortime.gui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+
+import com.nullpoint.colortime.R;
 
 
 public class HighScoresActivity extends Activity {
