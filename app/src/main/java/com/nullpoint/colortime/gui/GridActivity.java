@@ -1,6 +1,7 @@
 package com.nullpoint.colortime.gui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -53,8 +54,10 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         mPoints += 2;
 
         if (mPoints == mColorList.size()) {
-            Toast.makeText(this, "fin del juego", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, GameOverActivity.class);
             mChronometer.stop();
+            startActivity(intent);
+            finish();
         }
     }
 
