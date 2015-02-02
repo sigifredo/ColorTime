@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Chronometer;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.nullpoint.colortime.R;
 import com.nullpoint.colortime.util.ColorAdapter;

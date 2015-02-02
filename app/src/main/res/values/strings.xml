@@ -4,6 +4,8 @@
     <string name="app_name" translatable="false">ColorTime</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-6973573236116374/7203952405</string>
     <string name="cols">Columns</string>
+    <string name="congratulations">Congratulations</string>
+    <string name="good_memory">You have a good memory :)</string>
     <string name="new_record">New record</string>
     <string name="no_saved_scores">No saved scores</string>
     <string name="not_implemented_yet">Not implemented yet</string>
@@ -12,6 +14,7 @@
     <string name="powered_by_np">Powered by NullPoint.</string>
     <string name="rows">Rows</string>
     <string name="save">Save</string>
+    <string name="scores_not_implemented">Top scores not implemented yet</string>
     <string name="top_scores">Top scores</string>
     <string name="version">Version: </string>
 

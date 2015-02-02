@@ -2,6 +2,8 @@
 <resources>
 
     <string name="cols">Columnas</string>
+    <string name="congratulations">Felicidades</string>
+    <string name="good_memory">Tienes una buena memoria :)</string>
     <string name="new_record">Nuevo récord</string>
     <string name="no_saved_scores">No hay puntajes guardados</string>
     <string name="not_implemented_yet">No implementado aún</string>
@@ -10,6 +12,7 @@
     <string name="powered_by_np">Creado por NullPoint.</string>
     <string name="rows">Filas</string>
     <string name="save">Guardar</string>
+    <string name="scores_not_implemented">No se ha implementado el registro de puntajes</string>
     <string name="top_scores">Mejores puntajes</string>
     <string name="version">Versión: </string>
 
