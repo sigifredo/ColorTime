@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Chronometer;
@@ -23,6 +24,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
     private Chronometer mChronometer;
     private List<Integer> mColorList;
     private int mPoints;
+    private long mLastStopTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         mColorViews = new ColorView[2];
+        mLastStopTime = 0L;
 
         Bundle bundle = getIntent().getExtras();
 
@@ -46,6 +49,23 @@ public class GridActivity extends Activity implements AdapterView.OnItemClickLis
         gridView.setOnItemClickListener(this);
 
         mColorList = generateColorList(cols, rows);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        mLastStopTime = mChronometer.getBase() - SystemClock.elapsedRealtime();
+        mChronometer.stop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mChronometer.setBase(SystemClock.elapsedRealtime() + mLastStopTime);
+        mLastStopTime = 0L;
+
         mChronometer.start();
     }
 
